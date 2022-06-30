@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestros VueJS</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <style>
+        table,
+        td,
+        tr {
+            border: 1px solid black;
+            align: center;
+
+        }
+
+        #fila {
+            background-color: lightblue;
+        }
+
+        #fila1 {
+            background-color: lightcyan;
+        }
+
+        td,
+        tr {
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myApp">
+
+        <h2> Reporte de Maestros</h2>
+
+        <table>
+            <tr id="fila">
+                <td>
+                    <h4>Nombre</h4>
+                </td>
+                <td>
+                    <h4>Apellido</h4>
+                </td>
+                <td>
+                    <h4>Edad</h4>
+                </td>
+                <td>
+                    <h4>Materia</h4>
+                </td>
+                <td>
+                    <h4>Correo</h4>
+                </td>
+            </tr>
+            <tr id="fila1" v-for="{nombre, apellido, edad, materia, correo} in lista">
+                <td>{{nombre}}</td>
+                <td>{{apellido}}</td>
+                <td>{{edad}}</td>
+                <td>{{materia}}</td>
+                <td>{{correo}}</td>
+            </tr>
+
+
+            <!-- <p>{{nombre}} | {{apellido}} | {{edad}} | {{materia}} | {{correo}}</p>-->
+
+        </table>
+        <br>
+        <button v-on:click="agregarProfesor()">Agregar Nuevo Profesor</button>
+
+
+
+        <script src="../js/profesor.js"></script>
+
+</body>
+
+</html>
