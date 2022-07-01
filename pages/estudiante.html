@@ -56,8 +56,17 @@
 
         <h2> Reporte final</h2>
         <ul>
-            <li v-for="{nombre, apellido, edad} in lista">
-                <h3>{{nombre}} - {{apellido}} - {{edad}}</h3>
+            <li v-for="(item,index) in lista">
+                <h3>{{index +1}}: - {{item.apellido}} - {{item.edad}}</h3>
+                <hr>
+            </li>
+        </ul>
+
+        <h2> Reporte final 2 </h2>
+        <ul>
+            <li v-for="({nombre,apellido,edad},index) in lista">
+                <h3>{{index +1}}: - {{nombre}} - {{apellido}} - {{edad}}</h3>
+                <hr>
             </li>
         </ul>
 
