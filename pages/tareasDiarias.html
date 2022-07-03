@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Directivas VueJS</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <style>
+        #table1 {
+            margin-top: 20px;
+            margin-left: 20px;
+            background-color: bisque;
+            border: 1px solid black;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #table2 {
+            padding-left: 10px;
+
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        h3 {
+            margin-left: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="myApp">
+        <table id="table1">
+            <tr>
+                <td>
+                    <label for="idTarea">Descripción de la tarea: </label>
+                </td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id=" idTarea" v-model="tarea" v-on:keypress.enter="eventoFinal">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button v-on:click="agregarTarea()">Agregar a la lista</button>
+                </td>
+            </tr>
+
+
+            </tr>
+        </table>
+        <hr>
+        <h3>Lista de tareas:</h3>
+        <hr>
+        <ul type="square">
+            <li v-for="({tarea},index) in lista">
+                <p v-if="true">{{index +1}}: {{tarea}} </p>
+            </li>
+        </ul>
+        <hr>
+
+        <script src="../js/tareasDiarias.js"></script>
+
+    </div>
+</body>
+
+</html>
